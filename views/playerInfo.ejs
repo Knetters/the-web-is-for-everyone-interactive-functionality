@@ -1,0 +1,22 @@
+<%- include('./partials/head') %>
+
+<main class="playerInfo-main">
+    <div class="QA"></div>
+        <% if (Object.keys(data).length === 0) { %>
+            <p>No data available.</p>
+        <% } else { %>
+            <% data.forEach(info => { %>
+                <div class="inner-player-info-card">
+                    <ul>
+                        <li>
+                            <h3 id="title"><%= info.title %></h3>
+                            <p id="answer"><%= info.content %></p>
+                        </li>
+                    </ul>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+</main>
+
+<%- include('./partials/foot') %>

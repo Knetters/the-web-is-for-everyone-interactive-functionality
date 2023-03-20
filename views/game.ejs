@@ -1,0 +1,196 @@
+<%- include('./partials/head') %>
+
+<aside>
+    <%- include('./partials/sidebar') %>
+</aside>
+
+<main>
+    <div class="mobile-view">
+        <h3>Alert</h3>
+        <p>This application is not made for your smartzone, turn your screen or view it on a larger one.</p>
+    </div>
+    <div class="container">
+        <section class="panel-grid">
+
+            <div class="toolbar-grid">
+
+                <%# Header %>
+                <div class="header-panel">
+                    <header>
+                        <div class="main-title-block">
+                            <h1>Ulti.TV Game input</h1>
+                        </div>
+                    </header>
+                </div>
+
+                <%# Title and score %>
+                <div class="panel score-panel">
+                    <div class="title-container">
+                        <div class="title-block">
+                            <h2><%= data1.field %></h2>
+                            <p><%= data1.gameStatus %> - Division: <%= data1.division %></p>
+                        </div>
+                        <div class="live-box">
+                            <p><span>Live</span></p>
+                        </div>
+                    </div>
+                    <div class="score-container">
+                        <div class="score-items">
+                            <div class="club-badge">
+                                <img class="score-flag" src="/static/img/American_Ultimate_Disc_League_Logo.gif" alt="Flag of []">
+                                <p><%= data1.team1Name %></p>
+                            </div>
+                        </div>
+                        <div class="score-items">
+                            <h2 class="score-h2"><%= data2.team1Score %> - <%= data2.team2Score %></h2>
+                        </div>
+                        <div class="score-items">
+                            <div class="club-badge">
+                                <img class="score-flag" src="/static/img/American_Ultimate_Disc_League_Logo.gif" alt="Flag of []">
+                                <p><%= data1.team2Name %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <%# Points %>
+                <div class="panel points-panel">
+                    <section>
+                        <div id="player-info-container" class="player-info-container">
+                            <%# Player information will be displayed here %>
+                        </div>
+                        <%# All of the information will be shown here %>
+                        <div id="points-container" class="points-container">
+                            <h3>Points</h3>
+                            <div class="points-team-1">
+                                <table cellspacing="0" cellpadding="0">
+                                    <thead>
+                                    <tr>
+                                        <th>Pass</th>
+                                        <th>Turn</th>
+                                        <th>O/D</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <%# Point item team 1 %> <%# Hier moet een if statement komen waar een verschil wordt gezien tussen de puntentelling. Wanneer een team een punt krijgt moet dat team een groene kleur krijgen in de tabel. Het andere team rood. Daarboven op moet de kleur aangepast worden aan de hand van de team1OorD. %>
+                                        <% data2.scoredPoints.forEach(point => { %>
+                                            <% if (point.scored === point.team1Name) { %>
+                                                <% if (point.team1OorD === "O") { %>
+                                                    <tr class="score-info-team-1 dark-green">
+                                                        <td><%= point.team1Passes %></td>
+                                                        <td><%= point.team1Turnovers %></td>
+                                                        <td><%= point.team1OorD %></td>
+                                                    </tr>
+                                                <% } else {%>
+                                                    <tr class="score-info-team-1 green">
+                                                        <td><%= point.team1Passes %></td>
+                                                        <td><%= point.team1Turnovers %></td>
+                                                        <td><%= point.team1OorD %></td>
+                                                    </tr>
+                                                <% } %>
+                                            <% } else { %>
+                                                <% if (point.team1OorD === "D") { %>
+                                                    <tr class="score-info-team-1 dark-red">
+                                                        <td><%= point.team1Passes %></td>
+                                                        <td><%= point.team1Turnovers %></td>
+                                                        <td><%= point.team1OorD %></td>
+                                                    </tr>
+                                                <% } else {%>
+                                                    <tr class="score-info-team-1 red">
+                                                        <td><%= point.team1Passes %></td>
+                                                        <td><%= point.team1Turnovers %></td>
+                                                        <td><%= point.team1OorD %></td>
+                                                    </tr>
+                                                <% } %>
+                                            <% } %>
+                                        <% }) %>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="score-points">
+                                <table cellspacing="0" cellpadding="0">
+                                    <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <%# Score %>
+                                        <tr>
+                                            <% data2.scoredPoints.forEach(point => { %>
+                                                <tr>
+                                                    <td><%= point.team1Score %> - <%= point.team2Score %></td>
+                                                </tr>
+                                            <% }) %>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="points-team-2">
+                                <table cellspacing="0" cellpadding="0" class="right">
+                                    <thead>
+                                    <tr>
+                                        <th>O/D</th>
+                                        <th>Turn</th>
+                                        <th>Pass</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <%# Point item team 2 %> 
+                                        <% data2.scoredPoints.forEach(point => { %>
+                                            <% if (point.scored === point.team2Name) { %>
+                                                <% if (point.team2OorD === "O") { %>
+                                                    <tr class="score-info-team-2 dark-green">
+                                                        <td><%= point.team2OorD %></td>
+                                                        <td><%= point.team2Turnovers %></td>
+                                                        <td><%= point.team2Passes %></td>
+                                                    </tr>
+                                                <% } else {%>
+                                                    <tr class="score-info-team-2 green">
+                                                        <td><%= point.team2OorD %></td>
+                                                        <td><%= point.team2Turnovers %></td>
+                                                        <td><%= point.team2Passes  %></td>
+                                                    </tr>
+                                                <% } %>
+                                            <% } else { %>
+                                                <% if (point.team2OorD === "D") { %>
+                                                    <tr class="score-info-team-2 dark-red">
+                                                        <td><%= point.team2OorD %></td>
+                                                        <td><%= point.team2Turnovers %></td>
+                                                        <td><%= point.team2Passes  %></td>
+                                                    </tr>
+                                                <% } else {%>
+                                                    <tr class="score-info-team-2 red">
+                                                        <td><%= point.team2OorD %></td>
+                                                        <td><%= point.team2Turnovers %></td>
+                                                        <td><%= point.team2Passes  %></td>
+                                                    </tr>
+                                                <% } %>
+                                            <% } %>
+                                        <% }) %>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <div class="panel top-team-panel">
+                    
+                </div>
+
+                <div class="panel bot-team-panel">
+                    
+                </div>
+            </div>
+
+        </section>
+    </div>
+</main>
+
+<%- include('./partials/foot') %>
