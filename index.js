@@ -39,10 +39,17 @@ app.get('/playerInfo/:id', (request, response) => {
 });
 
 // Create a route for the index page
-app.get('/game', async function (request, response) {
+app.get('/stats', async function (request, response) {
   const [data1, data2] = await Promise.all(urls.map(fetchJson));
   const data = {data1, data2};
-  response.render('game', data);
+  response.render('stats', data);
+});
+
+// Create a route for the index page
+app.get('/teams', async function (request, response) {
+  const [data1, data2] = await Promise.all(urls.map(fetchJson));
+  const data = {data1, data2};
+  response.render('teams', data);
 });
 
 

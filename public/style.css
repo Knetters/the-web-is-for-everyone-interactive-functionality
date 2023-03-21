@@ -439,6 +439,21 @@ aside a:hover {
     margin-right: .5rem;
 }
 
+.team-name-info-container {
+    width: 100%;
+}
+
+.team-name-info-container h3 {
+    width: 50%;
+    float: left;
+}
+
+.team-info-icon {
+    text-align: right;
+    margin-top: -.4rem;
+    color: #908fb9;
+}
+
 /* Styling tablet vertial (in progress) */
 @media only screen and (max-width: 1000px) {
     body,html {
