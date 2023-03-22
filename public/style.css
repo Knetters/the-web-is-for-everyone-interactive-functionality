@@ -42,6 +42,13 @@ h2 {
     font-family: 'Bebas Neue', sans-serif;
 }
 
+.inner-aside h2 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
 h3 {
     margin: 0;
 }
@@ -374,7 +381,7 @@ td {
  
 .logo {
     width: 100%;
-    margin-top: .8rem;
+    margin-left: -1rem;
 }
 
 .panel {
@@ -409,30 +416,34 @@ aside {
     float: left;
     width: 12%;
     height: 100vh;
-    background-color: #908fb974;
+    background-color: #ffffff91;
 }
 
 .inner-aside {
-    padding: 2.1rem 1rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 aside ul {
     list-style-type: none;
     margin: 1rem 0 0 0;
     padding: 0;
+    border-top: 1px solid #7b8688;
 }
 
 aside li {
-    margin-top: .5rem;
+    margin-top: .7rem;
 }
 
 aside a {
-    color: black;
+    color: #6a6a6a;
     text-decoration: none;
+    font-weight: 500;
+    transition: .2s;
 }
 
 aside a:hover {
-    opacity: .8;
+    color: #000000;
+    padding-left: .5rem;
 }
 
 .nav-icon {
@@ -489,10 +500,6 @@ aside a:hover {
         object-fit: contain;
         display: block;
         margin: 0 auto;
-    }
-
-    .logo {
-        margin-top: -.5rem;
     }
 
     aside {
