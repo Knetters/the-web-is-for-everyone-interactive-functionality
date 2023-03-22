@@ -5,11 +5,12 @@ import fetch from "node-fetch";
 // Create a new Express app
 const app = express();
 
-const baseURL = 'https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/'
+const url = ["https://raw.githubusercontent.com/fdnd-agency/ultitv/main/ultitv-api"];
 
 const urls = [
-  'https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/game/943.json',
-  'https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/game/943/statistics.json'
+  [url] + "/game/943.json",
+  [url] + "/game/943/statistics.json",
+  [url] + "/facts/Player/8607.json",
 ];
 
 // Set EJS as the template engine and specify the views directory
