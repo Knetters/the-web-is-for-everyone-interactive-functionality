@@ -2,6 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=IBM+Plex+Mono:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:wght@500&display=swap');
 
+:root {
+    --green: #41bf52;
+    --blue: #6179ed;
+    --red: #fa3535;
+    --yellow: #ecd45e;
+    --grey: #c1c1c1;
+
+    --lightmodeGradient: linear-gradient(90deg, rgba(255,255,255,0) 0%, #8f70c8 0%, #76c28c 100%);
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -9,7 +19,7 @@ body, html {
     font-family: 'DM Sans', sans-serif;
     overflow-y: hidden;
     background: rgb(255,255,255);
-    background: linear-gradient(41deg, rgba(255,255,255,0) 0%, rgba(82,181,153,0.19931722689075626) 0%, rgba(110,70,203,0.19931722689075626) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #8f70c8 0%, #76c28c 100%);
 }
 
 main {
@@ -79,7 +89,7 @@ p {
 .title-block p {
     margin-top: -.2rem;
     font-weight: 500;
-    color: #6a6a6a;
+    color: #4d4d4d;
 }
 
 .live-box p {
@@ -109,7 +119,7 @@ p {
 }
 
 .yellow {
-    background-color: #f7fa35;
+    background-color: #ecd45e;
 }
 
 .grey {
@@ -139,6 +149,17 @@ p {
 .panel-grid {
     height: 100%;
 }
+
+.team-grid {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "team-panel";
+}
+  
+.team-panel { grid-area: team-panel; }
 
 .toolbar-grid {
     height: 100%;
@@ -352,15 +373,15 @@ td {
 }
 
 .male {
-    box-shadow: inset -.5rem 0em #6179ed;
+    box-shadow: inset -.3rem 0em #6179ed;
 }
 
 .female {
-    box-shadow: inset -.5rem 0em #da6fae;
+    box-shadow: inset -.3rem 0em #da6f8f;
 }
 
 .noneB {
-    box-shadow: inset -.5rem 0em #3da14b;
+    box-shadow: inset -.3rem 0em #3da14b;
 }
   
   .bot-team-panel { 
@@ -377,6 +398,7 @@ td {
 
 .main-title-block {
     width: 100%;
+    font-size: .8rem;
 }
  
 .logo {
@@ -388,7 +410,7 @@ td {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     border-radius: .5rem;
     padding: 1rem;
-    background-color: #ffffff34;
+    background-color: #ffffff59;
 }
 
 .mobile-view {
@@ -423,11 +445,20 @@ aside {
     padding: 1rem 1rem 1rem 1rem;
 }
 
+.logo-a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.logo-a:hover {
+    cursor: pointer;
+}
+
 aside ul {
     list-style-type: none;
     margin: 1rem 0 0 0;
     padding: 0;
-    border-top: 1px solid #7b8688;
+    border-top: 2px solid #5c5c5c;
 }
 
 aside li {
@@ -435,7 +466,7 @@ aside li {
 }
 
 aside a {
-    color: #6a6a6a;
+    color: #000000;
     text-decoration: none;
     font-weight: 500;
     transition: .2s;
@@ -444,6 +475,7 @@ aside a {
 aside a:hover {
     color: #000000;
     padding-left: .5rem;
+    cursor: pointer;
 }
 
 .nav-icon {
@@ -457,19 +489,44 @@ aside a:hover {
 .team-name-info-container h3 {
     width: 50%;
     float: left;
+    margin-bottom: .5rem;
 }
 
 .team-info-icon {
     text-align: right;
-    margin-top: -.4rem;
-    color: #908fb9;
+    margin-top: -.2rem;
+}
+
+.team-info-icon .fa {
+    color: #f2f2f2bd;
+    transition: .2s;
+    font-size: 1.5rem;
+}
+
+.team-info-icon .fa:hover {
+    cursor: pointer;
+}
+
+.team-container {
+    overflow-y: scroll;
+}
+
+.team-panel {
+    height: 96%;
+}
+
+.team-card {
+    background-color: #f2f2f27f;
+    border-radius: .5rem;
+    width: 100%;
+    margin-top: .5rem;
 }
 
 /* Styling tablet vertial (in progress) */
 @media only screen and (max-width: 1000px) {
     body,html {
         overflow-y: scroll;
-    }
+    } 
 
     .toolbar-grid {
         height: 100%;
