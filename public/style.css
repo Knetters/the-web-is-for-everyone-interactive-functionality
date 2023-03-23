@@ -9,7 +9,7 @@
     --yellow: #ecd45e;
     --grey: #c1c1c1;
 
-    --lightmodeGradient: linear-gradient(90deg, rgba(255,255,255,0) 0%, #8f70c8 0%, #76c28c 100%);
+    --lightmodeGradient: linear-gradient(90deg, rgba(255,255,255,0) 0%, #1682e7 0%, #76c28c 80%);
 }
 
 body, html {
@@ -19,7 +19,7 @@ body, html {
     font-family: 'DM Sans', sans-serif;
     overflow-y: hidden;
     background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #8f70c8 0%, #76c28c 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #1682e7 0%, #76c28c 80%);
 }
 
 main {

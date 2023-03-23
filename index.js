@@ -33,7 +33,7 @@ app.get('/', async function (request, response) {
 // Create a route for the player info page
 app.get('/playerInfo/:id', (request, response) => {
   let playerId = request.params.id;
-  let playerInfoUrl = baseURL + 'facts/Player/' + playerId + '.json';
+  let playerInfoUrl = url + 'facts/Player/' + playerId + '.json';
   fetchJson(playerInfoUrl).then((data) => {
     response.render('playerInfo', {data: data});
   });
