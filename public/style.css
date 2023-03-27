@@ -109,6 +109,11 @@ p {
     margin-top: .4rem;
 }
 
+.title-block-p {
+    padding-left: .8rem;
+    font-size: 1rem;
+}
+
 .live-box span {
     background-color: #fa3535;
     padding: .3rem .5rem .4rem .5rem;
@@ -551,7 +556,7 @@ aside a:hover {
 }
 
 .team-card {
-    background-color: #f2f2f27f;
+    background-color: var(--panelBackgroundColorç);
     border-radius: .5rem;
     width: 100%;
     margin-top: .5rem;
@@ -566,6 +571,82 @@ aside a:hover {
     font-size: 1rem;
     padding: .5rem;
     border-radius: .5rem;
+    border: none;
+    background-color: var(--panelBackgroundColor);
+}
+
+.team-grid {  display: grid;
+    height: 100%;
+    grid-template-columns: .5fr 1fr;
+    grid-template-rows: 0.8fr 1.2fr 1fr;
+    gap: 1rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "info-panel header-panel"
+      "info-panel team-players-panel"
+      "info-panel team-players-panel";
+  }
+  
+.info-panel { 
+    grid-area: info-panel; 
+}
+  
+.header-panel { 
+    grid-area: header-panel; 
+}
+  
+.team-players-panel { 
+    grid-area: team-players-panel; 
+}
+
+.question {
+    background-color: var(--blue);
+    padding: .8rem;
+    border-radius: 1rem 1rem 1rem 0rem;
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+.awnser {
+    background-color: var(--green);
+    padding: .8rem;
+    border-radius: 1rem 1rem 0rem 1rem;
+    width: 70%;
+    margin-bottom: 1rem;
+    float: right;
+}
+
+.player-form-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.player-form-post-continer {
+    height: 100%;
+    width: 100%;
+}
+
+.player-form-input-container {
+    width: 100%;
+}
+
+.player-form {
+    background-color: var(--panelBackgroundColor);
+    border-radius: .5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.inner-form {
+    padding: .5rem;
+}
+
+.player-form input, .player-form select {
+    width: 100%;
+    border-radius: .5rem;
+    font-size: .8rem;
     border: none;
 }
 
