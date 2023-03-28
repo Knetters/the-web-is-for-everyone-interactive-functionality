@@ -303,29 +303,22 @@ td {
 }
 
 .green {
-    background-color: #3bdc51;
-}
-
-.dark-green {
-    background-color: #3da14b;
+    background-color: #70dbb0;
     color: var(--black);
 }
 
-.dark-blue-table {
-    background-color: #304fe8;
-}
-
-.blue-table {
-    background-color: #6179ed;
+.dark-green {
+    background-color: #4ed39e;
+    color: var(--black);
 }
 
 .red {
-    background-color: #fa3535;
+    background-color: #ff4d4d;
     color: white;
 }
 
 .dark-red {
-    background-color: #c82222;
+    background-color: #ff1a1a;
     color: white;
 }
 
