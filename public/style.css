@@ -123,7 +123,7 @@ p {
 }
 
 .green {
-    background-color: #70dbb0;
+    background-color: #4ED39E;
     color: #000000;
 }
 
@@ -303,12 +303,12 @@ td {
 }
 
 .green {
-    background-color: #70dbb0;
+    background-color: #4ED39E;
     color: var(--black);
 }
 
 .dark-green {
-    background-color: #4ed39e;
+    background-color: #33cc8f;
     color: var(--black);
 }
 
