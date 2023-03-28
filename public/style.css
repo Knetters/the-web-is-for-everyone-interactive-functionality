@@ -304,12 +304,12 @@ td {
 
 .green {
     background-color: #4ED39E;
-    color: var(--black);
+    color: #000000;
 }
 
 .dark-green {
     background-color: #33cc8f;
-    color: var(--black);
+    color: #000000;
 }
 
 .red {
