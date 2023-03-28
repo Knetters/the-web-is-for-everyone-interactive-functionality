@@ -311,6 +311,14 @@ td {
     color: var(--black);
 }
 
+.dark-blue-table {
+    background-color: #004d99;
+}
+
+.blue-table {
+    background-color: #6179ed;
+}
+
 .red {
     background-color: #fa3535;
     color: white;
