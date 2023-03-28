@@ -388,6 +388,12 @@ td {
     opacity: .8;
 }
 
+.player-card-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 .inner-card {
     padding: .2rem .5rem .5rem .5rem;
 }
@@ -637,6 +643,7 @@ aside a:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
+    color: var(--black);
 }
 
 .inner-form {
@@ -648,6 +655,8 @@ aside a:hover {
     border-radius: .5rem;
     font-size: .8rem;
     border: none;
+    padding: .5rem 0rem .5rem 0rem;
+    margin-bottom: .5rem;
 }
 
 /* Styling tablet vertial (in progress) */

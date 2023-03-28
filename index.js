@@ -5,19 +5,22 @@ import fetch from "node-fetch";
 // Create a new Express app
 const app = express();
 
-const url = ["https://raw.githubusercontent.com/fdnd-agency/ultitv/main/ultitv-api"];
+const url = "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/ultitv-api";
 
 const postUrl = "https://api.ultitv.fdnd.nl/api/v1/players";
 const apiUrl = "https://api.ultitv.fdnd.nl/api/v1/questions";
 
+// All different url's for the API
 const urls = [
-  // Dashboard
-  [url] + "/game/943.json",
-  [url] + "/game/943/statistics.json",
-  [url] + "/facts/Player/8607.json",
-  [postUrl],
-  [apiUrl]
+  url + "/game/943.json",
+  url + "/game/943/statistics.json",
+  url + "/facts/Player/8607.json",
+  postUrl,
+  apiUrl
 ];
+
+const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+const data = {data1, data2, data3, data4, data5};
 
 // Set EJS as the template engine and specify the views directory
 app.set("view engine", "ejs");
@@ -29,10 +32,9 @@ app.use(express.urlencoded({ extended: true }))
 // Serve static files from the public directory
 app.use(express.static("public"));
 
+
 // Create a route for the index page
 app.get('/', async function (request, response) {
-  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
-  const data = {data1, data2, data3, data4, data5};
   response.render('index', data);
 });
 
@@ -47,44 +49,52 @@ app.get('/playerInfo/:id', (request, response) => {
 
 // Create a route for the index page
 app.get('/stats', async function (request, response) {
-  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
-  const data = {data1, data2, data3, data4, data5};
   response.render('stats', data);
 });
 
 // Create a route for the index page
 app.get('/teams', async function (request, response) {
-  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
-  const data = {data1, data2, data3, data4, data5};
   response.render('teams', data);
 });
 
 // Create a route for the team info page
 app.get('/teamInfo', async function (request, response) {
-  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
-  const data = {data1, data2, data3, data4, data5};
   response.render('teamInfo', data);
 });
 
-app.post("//teamInfo", (request, response) => {
-  request.body.answers = [
-    {
-      content: request.body.content,
-      questionId: request.body.question,
+// Handle form submission
+app.post('/teamInfo', async function (request, response) {
+  // Extract the form data from the request body
+  const { name, gender, jerseyNumber, team, question, content } = request.body;
+  
+  // Construct the request body in the desired format
+  const requestBody = {
+    "name": name,
+    "gender": gender,
+    "jerseyNumber": jerseyNumber,
+    "team": team,
+    "answers": [
+      {
+        "content": content,
+        "questionId": question
+      }
+    ]
+  };
+  
+  // Make a POST request to the API endpoint
+  const postResponse = await fetch(postUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
     },
-  ];
-  postJson(postUrl, request.body).then((data) => {
-    let newPlayer = { ...request.body };
-
-    if (data.success) {
-      response.redirect("/?memberPosted=true");
-    } else {
-      const errormessage = `${data.message}: Mogelijk komt dit door de slug die al bestaat.`;
-      const newplayer = { error: errormessage, values: newPlayer };
-      response.render("teamInfo", { newPlayer, data });
-    }
+    body: JSON.stringify(requestBody)
   });
+  
+  // Redirect the user to the teamInfo page
+  response.redirect('/teamInfo');
+  console.log(requestBody)
 });
+
 
 // Set the port number and start the server
 const port = process.env.PORT || 8000;
