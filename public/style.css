@@ -116,7 +116,7 @@ p {
 }
 
 .live-box span {
-    background-color: var(--red);
+    background-color: #ff1a1a;
     padding: .3rem .5rem .4rem .5rem;
     border-radius: .4rem;
     color: white;
@@ -295,6 +295,10 @@ table {
     width: 100%;
     border: none;
     color: var(--black);
+}
+
+thead tr th {
+    padding-bottom: .5rem;
 }
 
 td {
