@@ -93,11 +93,9 @@ app.post('/teamInfo', async function (request, response) {
   // Fetch the data again
   const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
   const data = {data1, data2, data3, data4, data5};
-
-  console.log(data)
   
   // Render the teamInfo view with the new data
-  response.render('teamInfo', data);
+  response.redirect("/teamInfo/?Posted=true")
 });
 
 // -------------------- Start local host ---------------------
