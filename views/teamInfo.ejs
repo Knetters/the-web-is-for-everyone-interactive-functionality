@@ -28,21 +28,21 @@
                             <form action="/teamInfo" method="POST" name="newPlayer" class="player-form">
                                 <div class="inner-form">
                                     <label for="name">Name</label>
-                                    <input type="text" name="name" placeholder="..." value="<%= locals.values?.name ?? '' %>">
+                                    <input type="text" name="name" placeholder="" value="<%= locals.values?.name ?? '' %>">
                                 
                                     <label for="name">gender</label>
-                                    <input type="text" name="gender" placeholder="..." value="<%= locals.values?.gender ?? '' %>">
+                                    <input type="text" name="gender" placeholder="" value="<%= locals.values?.gender ?? '' %>">
                                 
                                     <label for="name">jerseyNumber</label>
-                                    <input type="number" name="jerseyNumber" placeholder="..." value="<%= locals.values?.jerseyNumber ?? '' %>">
+                                    <input type="number" name="jerseyNumber" placeholder="" value="<%= locals.values?.jerseyNumber ?? '' %>">
                                 
                                     <label for="name">Team</label>
-                                    <input type="text" name="team" placeholder="..." value="<%= locals.values?.team ?? '' %>">
+                                    <input type="text" name="team" placeholder="" value="<%= locals.values?.team ?? '' %>">
                                 
                                     <label>Questions</label>
                                     <select name="question">
 
-                                        <option disabled selected>--- Select ---</option>
+                                        <option disabled selected>Select</option>
 
                                         <% data5.questions.forEach(question => { %>
                                             <option value="<%= question.id %>"><%= question.title %></option>
@@ -65,7 +65,7 @@
                             <% data4.players.forEach(player => { %>
 
                                 <%# Player card long %>
-                                    <li id="<%= player.Id %>" class=".long-player-card">
+                                    <li id="<%= player.Id %>" class="long-player-card">
                                         <div class="inner-card">
                                             <h4><span class="jersey-number"><%= player.jerseyNumber %></span> <%= player.name %></h4>
                                         </div>

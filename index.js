@@ -89,10 +89,15 @@ app.post('/teamInfo', async function (request, response) {
     },
     body: JSON.stringify(requestBody)
   });
+
+  // Fetch the data again
+  const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
+  const data = {data1, data2, data3, data4, data5};
+
+  console.log(data)
   
-  // Redirect the user to the teamInfo page
-  response.redirect('/teamInfo');
-  console.log(requestBody)
+  // Render the teamInfo view with the new data
+  response.render('teamInfo', data);
 });
 
 
