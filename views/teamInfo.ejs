@@ -60,18 +60,35 @@
                     </section>
                 </div>
                 <div class="panel team-players-panel">
+                    <div class="btn-row">
+                        <p class="team-btn-item"><a href="#" class="info-a">Players</a></p>
+                        <p class="team-btn-item"><a href="#" class="info-a">Stats</a></p>
+                    </div>
                     <section class="long-player-container">
-                        <ul class="player-card-ul">
+                        <article>
+                            <div class="full-width">
+                                <p class="long-jersey always-black">#</p>
+                                <p class="long-player-name always-black">Name</p>
+                                <p class="long-player-gender always-black">Gender</p>
+                                <p class="long-team-name always-black">Team Name</p>
+                                <p class="long-edit always-black">Action</p>
+                            </div>
+                        </article>
+                            
+                        <%# Player card long %> 
+                        <div class="scroll-contianer">
                             <% data4.players.forEach(player => { %>
-
-                                <%# Player card long %>
-                                    <li id="<%= player.Id %>" class="long-player-card">
-                                        <div class="inner-card">
-                                            <h4><span class="jersey-number"><%= player.jerseyNumber %></span> <%= player.name %></h4>
-                                        </div>
-                                    </li>
+                                <article id="<%= player.Id %>" class="long-player-card">
+                                    <div class="full-width">
+                                        <p class="long-jersey"><%= player.jerseyNumber %></p>
+                                        <h4 class="long-player-name"><%= player.name %></h4>
+                                        <p class="long-player-gender"><%= player.gender %></p>
+                                        <p class="long-team-name">Team name</p>
+                                        <p class="long-edit"><a href="#" class="info-a">Edit</a></p>
+                                    </div>
+                                </article>
                             <% }) %>
-                        </ul>
+                        </div>
                     </section>
                 </div>
             </div>

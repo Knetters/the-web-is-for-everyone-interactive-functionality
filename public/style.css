@@ -34,6 +34,11 @@ main {
     float: left;
 }
 
+.full-width {
+    width: 100%;
+    padding: 1rem;
+}
+
 /* typography */
 h1 {
     margin: 0;
@@ -395,15 +400,71 @@ tr:last-child td:last-child { border-bottom-right-radius: .5rem; }
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
+.btn-row {
+    width: 100%;
+    height: 2.2rem;
+}
+
+.team-btn-item {
+    float: left;
+    margin-right: .5rem;
+}
+
+.long-jersey {
+    width: 5%;
+    float: left;
+    font-weight: 600;
+}
+
+.long-player-name {
+    width: 25%;
+    float: left;
+}
+
+.long-player-gender {
+    width: 15%;
+    float: left;
+}
+
+.long-team-name {
+    width: 25%;
+    float: left;
+}
+
+.long-edit {
+    text-align: right;
+    margin-right: 2rem;
+}
+
 .long-player-card {
+    width: 100%;
     background-color: var(--panelBackgroundColor);
     border-radius: .5rem;
+}
+
+.long-player-card:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.scroll-container {
+    overflow-y: scroll;
+}
+
+article {
     width: 100%;
-    transition: .2s;
-    text-decoration: none;
-    color: var(--black);
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     margin-bottom: .5rem;
+    background-color: var(--yellow);
+    border-radius: .5rem;
+}
+
+.always-black {
+    color: #000000;
+    font-weight: 600;
+}
+
+.long-player-container {
+    width: 100%;
 }
 
 .player-card:hover {
@@ -568,17 +629,19 @@ aside a:hover {
 
 .team-info-icon {
     text-align: right;
-    margin-top: -.2rem;
 }
 
-.team-info-icon .fa {
-    color: #f2f2f2bd;
-    transition: .2s;
-    font-size: 1.5rem;
+.info-a {
+    text-decoration: none;
+    color: var(--black);
+    border: 1px solid var(--green);
+    padding: .2rem .5rem .2rem .5rem;
+    border-radius: .5rem;
 }
 
-.team-info-icon .fa:hover {
+.info-a:hover {
     cursor: pointer;
+    opacity: .8;
 }
 
 .team-container {
@@ -640,6 +703,7 @@ aside a:hover {
     width: 70%;
     margin-bottom: 1rem;
     color: #000000;
+    font-weight: 500;
 }
 
 .awnser {
@@ -650,6 +714,7 @@ aside a:hover {
     margin-bottom: 1rem;
     float: right;
     color: #000000;
+    font-weight: 500;
 }
 
 .player-form-container {
