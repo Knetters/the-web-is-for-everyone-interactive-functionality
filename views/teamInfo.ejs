@@ -20,10 +20,12 @@
                 <div class="panel info-panel">
                     <section class="player-form-container">
                         <div class="player-form-post-continer">
-                            <p class="question">Dit is een vraag voor een speler van een interview.</p>
-                            <p class="awnser">Dit is een antwoord van een speler.</p>
+                            <% data3.forEach(question => { %>
+                                <p class="question"><%= question.title %></p>
+                                <p class="awnser"><%= question.content %></p>
+                            <% }) %>
                         </div>
-                        <div class="player-form-input-container">
+                        <div class="player-form-input-container" id="player">
                             
                             <form action="/teamInfo" method="POST" name="newPlayer" class="player-form">
                                 <div class="inner-form">

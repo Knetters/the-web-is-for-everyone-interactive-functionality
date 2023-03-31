@@ -701,9 +701,11 @@ aside a:hover {
     padding: .8rem;
     border-radius: 1rem 1rem 1rem 0rem;
     width: 70%;
+    float: left;
     margin-bottom: 1rem;
     color: #000000;
     font-weight: 500;
+    margin-right: 30%;
 }
 
 .awnser {
@@ -715,6 +717,7 @@ aside a:hover {
     float: right;
     color: #000000;
     font-weight: 500;
+    margin-left: 30%;
 }
 
 .player-form-container {
@@ -726,6 +729,7 @@ aside a:hover {
 .player-form-post-continer {
     height: 100%;
     width: 100%;
+    overflow-y: scroll;
 }
 
 .player-form-input-container {
@@ -733,7 +737,7 @@ aside a:hover {
 }
 
 .player-form {
-    background-color: var(--panelBackgroundColor);
+    background-color: #132333;
     border-radius: .5rem;
     position: absolute;
     bottom: 0;
@@ -802,6 +806,18 @@ aside a:hover {
     .team-panel {
         height: 100%;
     }
+
+    .team-grid {  display: grid;
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: .8fr 2fr 2fr;
+        gap: 1em;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header-panel"
+            "team-player-panel"
+            "info-panel";
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -811,6 +827,10 @@ aside a:hover {
 
     .toolbar-grid {
         display: none;     
+    }
+
+    .team-grid {  
+        display: none
     }
 
     .mobile-view {
