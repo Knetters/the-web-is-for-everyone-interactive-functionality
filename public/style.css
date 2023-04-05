@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=IBM+Plex+Mono:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:wght@500&display=swap');
 
+@media (prefers-color-scheme: dark) {
+    body {
+      color: #eee;
+      background: #121212;
+    }
+
 :root {
     --green: #4ED39E;
     --blue: #6179ed;
@@ -838,4 +844,5 @@ aside a:hover {
     .mobile-view {
         display: block;
     }
+}
 }
