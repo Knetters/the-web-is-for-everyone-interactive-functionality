@@ -20,10 +20,13 @@ Ik heb me bezig gehouden met de volgende user stories:
 
 ![mediamodifier_image](https://user-images.githubusercontent.com/60781257/230025742-5c93626b-e2ad-4b5d-97a9-007e96a1baa5.png)
 
-[Live voorbeeld](https://weak-puce-bonobo-shoe.cyclic.app)
+[Live voorbeeld](https://ultitv.onrender.com)
 
 ## Kenmerken
 Dit is een node.js webapplicatie die gebruik maakt van drie API's Er worden spelers opgehaald, informatie van een wedstreid en informatie over de spelers. Alles wordt met een grid in een one-page gezet zodat de commentators niet al te veel hoven te navigeren over de website.
+
+### Prograsive enhancement
+Tijdens het bouwen van de playerInfo heb ik eerst een functioneel kaal ontwerp gemaakt. Wanneer het posten werktt
 
 ## Installatie
 Download of clone dit project. In de root: `npm install` om alle packages te installeren en `npm start` om de website te starten.
