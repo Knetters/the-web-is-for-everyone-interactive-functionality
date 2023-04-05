@@ -27,37 +27,36 @@
                         </div>
                         <div class="player-form-input-container" id="player">
                             
-                            <form action="/teamInfo" method="POST" name="newPlayer" class="player-form">
+                            <form action="/postPlayerInfo" method="POST" name="newPlayer" class="player-form">
                                 <div class="inner-form">
-                                    <label for="name">Name</label>
-                                    <input type="text" name="name" placeholder="" value="<%= locals.values?.name ?? '' %>" required>
-                                
+                                  <label for="name">Name</label>
+                                  <input type="text" name="name" placeholder="" value="<%= locals.values?.name ?? '' %>" required>
+                              
+                                  <div id="hidden-fields" style="display: none;">
                                     <label for="name">gender</label>
                                     <input type="text" name="gender" placeholder="" value="<%= locals.values?.gender ?? '' %>" required>
-                                
+                              
                                     <label for="name">jerseyNumber</label>
                                     <input type="number" min="1" max="99" name="jerseyNumber" placeholder="" value="<%= locals.values?.jerseyNumber ?? '' %>" required>
-                                
+                              
                                     <label for="name">Team</label>
                                     <input type="text" name="team" placeholder="" value="<%= locals.values?.team ?? '' %>" required>
-                                
+                              
                                     <label>Questions</label>
                                     <select name="question" required>
-
-                                        <option disabled selected>Select</option>
-
-                                        <% data5.questions.forEach(question => { %>
-                                            <option value="<%= question.id %>"><%= question.title %></option>
-                                        <% }) %>
-
+                                      <option disabled selected>Select</option>
+                                      <% data5.questions.forEach(question => { %>
+                                        <option value="<%= question.id %>"><%= question.title %></option>
+                                      <% }) %>
                                     </select>
-
+                              
                                     <label>Answer</label>
-                                    <input  type="text" name="content" value="<%= locals.values?.content ?? ''%>" required>
-                                
-                                    <input type="submit" value="Submit" />
+                                    <input type="text" name="content" value="<%= locals.values?.content ?? ''%>" required>
+                                  </div>
+                              
+                                  <input type="submit" value="Submit" />
                                 </div>
-                            </form>
+                              </form>
                         </div>
                     </section>
                 </div>

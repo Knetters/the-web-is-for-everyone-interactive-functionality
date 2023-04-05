@@ -685,7 +685,8 @@ aside a:hover {
   }
   
 .info-panel { 
-    grid-area: info-panel; 
+    grid-area: info-panel;
+    z-index: 10;
 }
   
 .header-panel { 
@@ -693,7 +694,8 @@ aside a:hover {
 }
   
 .team-players-panel { 
-    grid-area: team-players-panel; 
+    grid-area: team-players-panel;
+    overflow-y: scroll;
 }
 
 .question {
@@ -738,7 +740,7 @@ aside a:hover {
 
 .player-form {
     background-color: #132333;
-    border-radius: .5rem;
+    border-radius: .5rem .5rem 0rem 0rem;
     position: absolute;
     bottom: 0;
     width: 100%;

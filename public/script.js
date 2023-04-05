@@ -57,3 +57,10 @@ function toggleDarkMode() {
         initialTheme = true;
     }
 }
+
+const firstInput = document.querySelector('input[name="name"]');
+const hiddenFields = document.querySelector('#hidden-fields');
+
+firstInput.addEventListener('focus', () => {
+    hiddenFields.style.display = '';
+});

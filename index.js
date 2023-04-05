@@ -7,7 +7,7 @@ const app = express();
 
 const url = "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/ultitv-api";
 
-const postUrl = "https://api.ultitv.fdnd.nl/api/v1/players";
+const postUrl = "https://api.ultitv.fdnd.nl/api/v1/players?first=100";
 const apiUrl = "https://api.ultitv.fdnd.nl/api/v1/questions";
 
 // All different url's for the API
@@ -63,7 +63,7 @@ app.get('/teamInfo', async function (request, response) {
 });
 
 // Handle form submission
-app.post('/teamInfo', async function (request, response) {
+app.post('/postPlayerInfo', async function  (request, response) {
   // Extract the form data from the request body
   const { name, gender, jerseyNumber, team, question, content } = request.body;
   
@@ -93,10 +93,16 @@ app.post('/teamInfo', async function (request, response) {
   // Fetch the data again
   const [data1, data2, data3, data4, data5] = await Promise.all(urls.map(fetchJson));
   const data = {data1, data2, data3, data4, data5};
-  
-  // Render the teamInfo view with the new data
-  response.redirect("/teamInfo/?Posted=true")
-});
+
+  postJson(url, request.body).then((data) => {
+    if (data.message == 'Succes') {
+      response.redirect(`/teamInfo/?Posted=true`)
+
+    } else {
+      response.redirect(`/teamInfo/?Posted=false`)
+    }
+  })
+})
 
 // -------------------- Start local host ---------------------
 

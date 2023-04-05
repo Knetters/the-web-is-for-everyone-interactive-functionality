@@ -1,30 +1,44 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
-
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+# Ulti.TV Commentators dashboard
 
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
   * [Kenmerken](#kenmerken)
   * [Installatie](#installatie)
+  * [Gebruik](#gebruik)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
 
-## Gebruik
-<!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+Ulti.TV wil graag een redesign voor hun commentators dashboard om tijdens wedstrijden de score bij te houden en zichzelf in te lezen over de informatie van de spelers.
+
+Ik heb me bezig gehouden met de volgende user stories:
+> As a commentator I want to be able to see the basic details about a single game I will be commentating on, so that I can prepare in advance
+
+> As a commentator I want to be able to see information about a player, so I can enrich my commentary during the live stream.
+
+![smartmockups_lf9kd28p](https://user-images.githubusercontent.com/60781257/225288087-48976ac9-f1e0-4426-862e-7f0d0f9bec39.png)
+
+[Live voorbeeld](https://weak-puce-bonobo-shoe.cyclic.app)
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+Dit is een node.js webapplicatie die gebruik maakt van drie API's Er worden spelers opgehaald, informatie van een wedstreid en informatie over de spelers. Alles wordt met een grid in een one-page gezet zodat de commentators niet al te veel hoven te navigeren over de website.
 
 ## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+Download of clone dit project. In de root: `npm install` om alle packages te installeren en `npm start` om de website te starten.
+
+## Gebruik
+Je kan op de kaartjes van spelers klikken voor meer informatie. Wanneer je dat doet verdwijnt de puntentelling van de wedstreid tot dat je op het kruisje klikt.
+
+## Bronnen
+* [Ulti.TV](https://ulti.tv)
+* [Miro](https://miro.com/app/board/uXjVPhWkx8o=/)
+
+## Licentie
+
+This project is licensed under the terms of the [MIT license](./LICENSE).
+
 
 
 ## Bronnen
