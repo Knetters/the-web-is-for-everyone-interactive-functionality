@@ -26,7 +26,7 @@ Ik heb me bezig gehouden met de volgende user stories:
 Dit is een node.js webapplicatie die gebruik maakt van drie API's Er worden spelers opgehaald, informatie van een wedstreid en informatie over de spelers. Alles wordt met een grid in een one-page gezet zodat de commentators niet al te veel hoven te navigeren over de website.
 
 ### Prograsive enhancement
-Tijdens het bouwen van de playerInfo heb ik eerst een functioneel kaal ontwerp gemaakt. Wanneer het posten werktt
+Tijdens het bouwen van de playerInfo heb ik eerst een functioneel kaal ontwerp gemaakt. Ik heb nu een formulier dat alleen bruikbaar is wanneer JavaScript geladen is. Ik wil dit de volgende sprint omdraaien in JavaScript. Wanneer JavaScript geladen is wordt het formulier verborgen in de plaats van andersom. Ik wil ook cookies instellen voor de user experience. Zo kan de website bijvoorbeeld je dark mode onthouden. Dit moet ik ook met de systeem voorkeur doen.
 
 ## Installatie
 Download of clone dit project. In de root: `npm install` om alle packages te installeren en `npm start` om de website te starten.
